@@ -3,20 +3,19 @@ import "./homepage.css";
 import background from './background.gif';
 import { useNavigate } from "react-router-dom";
 
-
-  
         
 function HomePage() {
 const navigate = useNavigate();
 const toLoginPage = () =>{
-        console.log("button works")
-        //navigate("/dashboard");
+        navigate("/login");
 }
   return (
     <div className="homepage-container">
       <div className="homepage-header">
-      <input type="button" name="Login / Register" id="Login" value={"LOGIN"} onClick={toLoginPage}/>
-       <button className="homepage-button">Login / Register</button>
+      <button className="homepage-button" onClick={toLoginPage}>Login / Register</button>
+
+
+
       </div>
       <div className="homepage-divider"></div>  
       <div className="homepage-background">
