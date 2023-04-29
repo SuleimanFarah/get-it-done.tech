@@ -1,19 +1,11 @@
-import {
-  Button,
-  Card,
-  Checkbox,
-  ControlGroup,
-  Elevation,
-  InputGroup,
-  Tag,
-} from "@blueprintjs/core";
 import { useState } from "react";
-import useLocalStorage from "./useLocalStorage";
+import dataPersistence from "./dataPersistence";
+import "./hardcode.css";
 
-function App() {
+function CodeHard() {
   const [userInput, setUserInput] = useState("");
 
-  const [todoList, setTodoList] = useLocalStorage("todo-items", []);
+  const [todoList, setTodoList] = dataPersistence("todo-items", []);
 
   const addItem = (e) => {
     e.preventDefault();
@@ -43,43 +35,46 @@ function App() {
 
   return (
     <div className="App">
-      <Card elevation={Elevation.TWO}>
+      <div className="card">
         <h2 className="heading">To-do List</h2>
         <form onSubmit={addItem}>
-          <ControlGroup fill={true} vertical={false}>
-            <InputGroup
+          <div className="input-wrapper">
+            <input
+              className="input"
               placeholder="Add a task..."
               value={userInput}
               onChange={(e) => setUserInput(e.target.value)}
             />
-            <Button type="submit" intent="primary">
+            <button type="submit" className="add-btn">
               Add
-            </Button>
-          </ControlGroup>
+            </button>
+          </div>
         </form>
         <div className="items-list">
           {todoList.map((item, index) => (
-            <Tag
+            <label
+              className="tag"
               key={index + item.name}
-              large
-              minimal
-              multiline
-              onRemove={() => deleteTask(index)}
+              htmlFor={`checkbox-${index + item.name}`}
             >
-              <Checkbox
+              <input
+                id={`checkbox-${index + item.name}`}
+                type="checkbox"
                 checked={item.finished}
                 onChange={() => toggleTask(index)}
-              >
-                <span className={item.finished ? "finished" : ""}>
-                  {item.name}
-                </span>
-              </Checkbox>
-            </Tag>
+              />
+              <span className={`label ${item.finished ? "finished" : ""}`}>
+                {item.name}
+              </span>
+              <button className="remove-btn" onClick={() => deleteTask(index)}>
+                <span>+</span>
+              </button>
+            </label>
           ))}
         </div>
-      </Card>
+      </div>
     </div>
   );
 }
 
-export default App;
+export default CodeHard;
