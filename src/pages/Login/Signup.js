@@ -1,28 +1,31 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import './Login.css';
+import { useNavigate } from "react-router-dom";
 
-export const Signup = () =>{
+export default function Login (){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [email, setEmail] = useState('');
+    const navigate = useNavigate();
 
-    const handleSubmit = (e) =>{
-        e.preventDefault();
-        console.log(username, password);
-    }
-
+    const handleSubmit = () =>{
+        if(username.length===0 || password.length===0){
+            alert("Invalid credentials");
+        }
+        else{
+            navigate("/dashboard");
+        }
+    };
     return(
-        <div>
-        <h1>Login</h1>
-        <form onSubmit={handleSubmit}>
-            <label form="username">username</label>
-            <input value = {username} onChange = {(e) => setUsername(e.target.value)} type = "username" placeholder="username"/>
+        <div className="container">
+        <h1>Get ready to do!</h1>
+            <label htmlFor="username">Username</label>
+            <input type="text" name="username" id="username" value={username} onChange= {(e)=>setUsername(e.target.value)}/>
             <label form="password">password</label>
-            <input onChange = {(e) => setPassword(e.target.value)}type = "password" placeholder="password"/>
-            <label form="email">Email</label>
-            <input value = {email} onChange = {(e) => setEmail(e.target.value)} type = "email" placeholder="youremail@something.com"/>
-            <button type="submit">Register</button>
-        </form>
+            <input type="password" name="password" id="password" value={password} onChange= {(e)=>setPassword(e.target.value)}/>
+            <div className="registration">
+                <input type="button" name="Login" id="Login" value={"LOGIN"} onClick={handleSubmit}/>
+                <input type="button" name="Login" id="Register" value={"REGISTER"} onClick={handleSubmit}/>
+            </div>
         </div>
     )
 }

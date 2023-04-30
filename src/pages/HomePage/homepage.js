@@ -20,7 +20,7 @@ const toLoginPage = () =>{
       <div className="homepage-divider"></div>  
       <div className="homepage-background">
         <img src={background} alt="Get-it-Done ToDo List" />
-        <h1>Get It Done With</h1>
+        <h1>Get It Done With!</h1>
       </div>
     </div>
   );
