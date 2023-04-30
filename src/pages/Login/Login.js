@@ -70,7 +70,7 @@ export default function Login (){
         <h1>USER REGISTRATION</h1>
             <label htmlFor="username">Email</label>
             <input type="text" name="username" id="username" value={username} onChange= {(e)=>setUsername(e.target.value)}/>
-            <label form="password">Password</label>
+            <label form="password">Password (8 characters min)</label>
             <input type="password" name="password" id="password" value={password} onChange= {(e)=>setPassword(e.target.value)}/>
             <div className="registration">
                 <input type="button" name="Login" id="Login" value={"LOGIN"} onClick={handleSubmit}/>
