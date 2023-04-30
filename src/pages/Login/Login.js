@@ -21,7 +21,7 @@ export default function Login (){
             <label htmlFor="username">Username</label>
             <input type="text" name="username" id="username" value={username} onChange= {(e)=>setUsername(e.target.value)}/>
             <label form="password">password</label>
-            <input type="text" name="password" id="password" value={password} onChange= {(e)=>setPassword(e.target.value)}/>
+            <input type="password" name="password" id="password" value={password} onChange= {(e)=>setPassword(e.target.value)}/>
             <div className="registration">
                 <input type="button" name="Login" id="Login" value={"LOGIN"} onClick={handleSubmit}/>
                 <input type="button" name="Login" id="Register" value={"REGISTER"} onClick={handleSubmit}/>
