@@ -1,0 +1,14 @@
+.dashboard-button {
+    padding: 10px;
+    margin: 0 10px;
+    background-color: #46aaaf;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .dashboard-button:hover {
+    background-color: #447878;
+  }
