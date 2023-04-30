@@ -58,9 +58,19 @@ function CodeHard() {
   };
 
   const deleteTask = (index) => {
+
+    /*const updatedTaskObject = Object.fromEntries(
+      Object.entries(taskObject).map(([date, tasks]) => [
+        date,
+        tasks.filter((task) => task !== existingItems.filter(item) => item.name  ),
+      ])
+    );*/
     setTodoList((existingItems) =>
       existingItems.filter((item, i) => index !== i)
     );
+    
+    // Update the state with the new taskObject
+   // setTaskObject(updatedTaskObject);
   };
 
   // Calculate the number and percentage of completed tasks

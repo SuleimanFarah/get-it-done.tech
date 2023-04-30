@@ -1,22 +1,33 @@
 import React from 'react';
 
 class PastProductivity extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      weeklyReport: { /* data for weekly report */ },
-      monthlyReport: { /* data for monthly report */ },
-      yearlyReport: { /* data for yearly report */ },
-      userComparison: { /* data for user comparison */ },
-    };
-  }
 
   render() {
+    const completedGoals = {};
+    const data = JSON.parse(localStorage.getItem("task-items"));
+    for(const key of Object.keys(data))
+    {
+      if(data[key].length > 1)
+      {
+        let day_completed_goals = 0;
+        for(const task of data[key])
+        {
+          if(data[key][task]["finished"] == true)
+          {
+            day_completed_goals ++;
+          }
+        }
+        completedGoals[key] = day_completed_goals;
+      }
+    }
+  
     return (
       <div>
         <h2>Past Productivity</h2>
         <h3>Weekly Report</h3>
-        <p>{/* display weekly report data */}</p>
+        {localStorage.getItem("task-items")}
+        {completedGoals}
+        
         <h3>Monthly Report</h3>
         <p>{/* display monthly report data */}</p>
         <h3>Yearly Report</h3>
