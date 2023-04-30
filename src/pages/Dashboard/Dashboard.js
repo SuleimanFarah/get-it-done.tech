@@ -33,6 +33,13 @@ function CodeHard() {
     );
   };
 
+  // Calculate the number and percentage of completed tasks
+  const completed = todoList.filter((item) => item.finished);
+  const completedCount = completed.length;
+  const completedPercentage = Math.round((completedCount / todoList.length) * 100
+  );
+
+
   return (
     <div className="App">
       <div className="card">
@@ -71,6 +78,12 @@ function CodeHard() {
               </button>
             </label>
           ))}
+        </div>
+        <div className="stats">
+          <p>
+            You have completed {completedCount} out of {todoList.length} tasks,{" "}
+            which is {completedPercentage}%.
+          </p>
         </div>
       </div>
     </div>
