@@ -4,10 +4,10 @@ class PastProductivity extends React.Component {
 
   render() {
     const completedGoals = {};
-    const data = JSON.parse(localStorage.getItem("task-items"));
+    /*const data = JSON.parse(localStorage.getItem("task-items"));
     for(const key of Object.keys(data))
     {
-      if(data[key].length > 1)
+      if(data[key].length > 2)
       {
         let day_completed_goals = 0;
         for(const task of data[key])
@@ -19,14 +19,13 @@ class PastProductivity extends React.Component {
         }
         completedGoals[key] = day_completed_goals;
       }
-    }
+    }*/
   
     return (
       <div>
         <h2>Past Productivity</h2>
         <h3>Weekly Report</h3>
         {localStorage.getItem("task-items")}
-        {completedGoals}
         
         <h3>Monthly Report</h3>
         <p>{/* display monthly report data */}</p>
