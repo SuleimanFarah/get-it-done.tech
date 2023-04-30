@@ -10,20 +10,22 @@
     margin-top: 20px;
   }
 
-.homepage-button {
-  padding: 10px;
-  margin: 0 10px;
-  background-color: #46aaaf;
-  border: none;
-  color: rgb(0, 0, 0);
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.homepage-button:hover {
-  background-color: #447878;
-}
+  .homepage-button {
+    padding: 12px 20px;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, #46aaaf, #3e8e8c);
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .homepage-button:hover {
+    transform: scale(1.1);
+  }
   
 .homepage-divider {
     height: 1px;
@@ -53,7 +55,7 @@
   }
   
   .homepage-background h1 {
-    font-size: 50px;
+    font-size: 45px;
     font-weight: bold;
     color: #000000;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);

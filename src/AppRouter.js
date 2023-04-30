@@ -15,7 +15,6 @@ class AppRouter extends React.Component{
           <Routes>
             <Route path = "/" element = {<HomePage />} exact = {true} />
             <Route path = "/dashboard" element = {<Dashboard />} exact = {true} />
-            <Route path = "/homepage" element = {<HomePage />} exact = {true} />
             <Route path = "/Past_productivty" element = {<PastProductivity />} exact = {true} />
             <Route path = "/login" element = {<Login />} exact = {true} />
 
